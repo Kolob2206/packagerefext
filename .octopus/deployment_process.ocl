@@ -1,0 +1,15 @@
+step "Script with package ref in ext feed" {
+    properties = {
+        Octopus.Action.TargetRoles = "role"
+    }
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-1"
+            Octopus.Action.Template.Version = "1"
+            package = "{\"PackageId\":\"api-package\",\"FeedId\":\"Local Feed\"}"
+        }
+        worker_pool_variable = ""
+    }
+}
